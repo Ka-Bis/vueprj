@@ -31,4 +31,9 @@
     margin-left: 11em;
     background-color: inherit;
   }
+  @media (max-width:990px) {
+    .ariane {
+      float: right;
+    }
+  }
 </style>
