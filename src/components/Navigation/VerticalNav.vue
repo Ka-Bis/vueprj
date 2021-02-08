@@ -1,7 +1,7 @@
 <template>
   <div class="mt-5">
     <nav class="nav">
-      <router-link class="nav-link v-nav" to="/cours">Cours</router-link>
+      <router-link class="nav-link v-nav" :to="{name:'course'}">Cours</router-link>
       <router-link class="nav-link v-nav" to="/devoirs">Devoirs</router-link>
       <router-link class="nav-link v-nav" to="/examens">Examens</router-link>
       <router-link class="nav-link v-nav" to="/absences">Absences</router-link>
