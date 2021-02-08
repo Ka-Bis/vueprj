@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import FormateurDshbrd from "@/components/FormateurDashboard.vue";
+import FormateurDshbrd from "@/components/Formateur/FormateurDashboard.vue";
 export default {
   name: "Home",
   components: {

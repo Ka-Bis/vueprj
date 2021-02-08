@@ -1,7 +1,9 @@
 import Vue from "vue";
 
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import { BootstrapVue, IconsPlugin, VBToggle } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
-Vue.use(BootstrapVue, IconsPlugin);
+Vue.use(BootstrapVue);
+Vue.use(VBToggle);
+Vue.use(IconsPlugin);
