@@ -10,49 +10,55 @@
 </template>
 
 <script>
-export default {
-  name: "VerticalNav",
-};
+  export default {
+    name: "VerticalNav",
+  };
 </script>
 
 <style scoped>
-nav {
-  display: inline;
-  float: left;
-  margin-left: 1.5em;
-}
-a {
-  color: black;
-}
-.v-nav {
-  color: black;
-  border-bottom: 1px solid rgb(184, 181, 181);
-  margin-left: 0.5em;
-  font-size: 20px;
-}
-
-.v-nav:last-child {
-  border-bottom: none;
-}
-
-.v-nav:hover {
-  background-color: rgba(226, 27, 40, 0.65);
-}
-
-@media (max-width: 990px) {
   nav {
-    float: none;
-    /* border: 1px solid black; */
+    display: inline;
+    float: left;
+    margin-left: 1.5em;
+  }
+
+  a {
+    color: black;
   }
 
   .v-nav {
-    border-bottom: none;
+    color: black;
+    border-bottom: 1px solid rgb(184, 181, 181);
+    margin-left: 0.5em;
     font-size: 20px;
-    margin: 0;
+  }
+
+  .v-nav:last-child {
+    border-bottom: none;
   }
 
   .v-nav:hover {
-    background-color: inherit;
+    background-color: rgba(226, 27, 40, 0.65);
   }
-}
+
+  @media (max-width: 990px) {
+    div {
+      margin-top: 3em;
+    }
+
+    nav {
+      float: none;
+      /* border: 1px solid black; */
+    }
+
+    .v-nav {
+      border-bottom: none;
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .v-nav:hover {
+      background-color: inherit;
+    }
+  }
 </style>
