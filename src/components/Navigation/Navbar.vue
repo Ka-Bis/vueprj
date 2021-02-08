@@ -55,27 +55,31 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <!-- <b-nav-item> -->
-          <router-link class="nav-link a-link bg-dark" to="/">
+          <router-link class="nav-link a-link" to="/">
             Accueil
           </router-link>
-          <!-- </b-nav-item> -->
-          <!-- <b-nav-item> -->
           <router-link class="nav-link a-link" to="/espace-pedagogique">
             Espace pedagogique
           </router-link>
-          <!-- </b-nav-item> -->
-          <!-- <b-nav-item> -->
           <router-link class="nav-link a-link" to="/espace-administrative">
             Espace administrative
           </router-link>
-          <!-- </b-nav-item> -->
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto">
           <b-nav-form class="nav-form">
-            <b-form-input size="sm" class="mr-sm-2" placeholder="Search" style="width:200px;" />
-            <b-button size="sm" class="my-2 my-sm-0" type="submit" variant="outline-danger">
+            <b-form-input
+              size="sm"
+              class="mr-sm-2"
+              placeholder="Search"
+              style="width:200px;"
+            />
+            <b-button
+              size="sm"
+              class="my-2 my-sm-0"
+              type="submit"
+              variant="outline-danger"
+            >
               Search
             </b-button>
           </b-nav-form>
@@ -83,66 +87,65 @@
       </b-collapse>
     </b-navbar>
     <Breadcrumb />
+    <!-- <Breadcrumb /> -->
   </header>
 </template>
 
 <script>
-  import Breadcrumb from "@/components/Navigation/Breadcrumb.vue";
-  export default {
-    name: "Navbar",
-    components: {
-      Breadcrumb,
-    },
-  };
+import Breadcrumb from "@/components/Navigation/Breadcrumb.vue";
+// import Breadcrumb2 from "@/components/Navigation/Breadcrumb2.vue";
+export default {
+  name: "Navbar",
+  components: {
+    Breadcrumb,
+  },
+};
 </script>
 
 <style scoped>
-  /* .v-navbar {
-  background-color: #343a40;
-} */
-  .navbar {
-    margin-top: 3em;
-    height: 4em;
-    /* background-color: #212529; */
-    /* width: 70%; */
-  }
+.navbar {
+  margin-top: 3em;
+  height: 4em;
+  /* background-color: #212529; */
+  /* width: 70%; */
+}
 
-  .a-link,
-  .nav-form {
-    background-color: rgb(52, 58, 64);
-  }
+.a-link,
+.nav-form {
+  background-color: rgb(52, 58, 64);
+}
 
-  ul {
-    font-size: 20px;
-  }
+ul {
+  font-size: 20px;
+}
 
-  .a-link,
-  .btn-toggle {
-    color: #fff;
-  }
+.a-link,
+.btn-toggle {
+  color: #fff;
+}
 
-  /* .input {
+/* .input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 } */
-  /* .btn {
+/* .btn {
     border-radius: 0 5px 5px 0;
   } */
 
-  @media (max-width: 990px) {
-    .navbar {
-      width: 100%;
-      margin: 0;
-    }
-
-    #dawan_logo {
-      display: none;
-    }
-
-    .nav-form {
-      justify-content: center;
-      padding-top: 0.5em;
-      padding-bottom: 0.5em;
-    }
+@media (max-width: 990px) {
+  .navbar {
+    width: 100%;
+    margin: 0;
   }
+
+  #dawan_logo {
+    display: none;
+  }
+
+  .nav-form {
+    justify-content: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+}
 </style>
