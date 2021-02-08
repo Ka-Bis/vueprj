@@ -55,15 +55,16 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <router-link class="nav-link a-link" to="/">
+          <!-- <router-link class="nav-link a-link" to="/">
             Accueil
-          </router-link>
-          <router-link class="nav-link a-link" to="/espace-pedagogique">
+          </router-link> -->
+          <b-nav-item href='/' class="nav-link a-link">Home</b-nav-item>
+          <b-nav-item class="nav-link a-link" to="/espace-pedagogique">
             Espace pedagogique
-          </router-link>
-          <router-link class="nav-link a-link" to="/espace-administrative">
+          </b-nav-item>
+          <b-nav-item class="nav-link a-link" to="/espace-administrative">
             Espace administrative
-          </router-link>
+          </b-nav-item>
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto">

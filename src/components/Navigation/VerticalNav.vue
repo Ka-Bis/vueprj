@@ -1,10 +1,10 @@
 <template>
-  <div class="mt-5">
+  <div>
     <nav class="nav">
-      <router-link class="nav-link v-nav" :to="{name:'course'}">Cours</router-link>
-      <router-link class="nav-link v-nav" to="/devoirs">Devoirs</router-link>
-      <router-link class="nav-link v-nav" to="/examens">Examens</router-link>
-      <router-link class="nav-link v-nav" to="/absences">Absences</router-link>
+      <b-nav-item class="v-nav" href="/formateur/cours">Cours</b-nav-item>
+      <b-nav-item class="v-nav" href="/devoirs">Devoirs</b-nav-item>
+      <b-nav-item class="v-nav" href="/examens">Examens</b-nav-item>
+      <b-nav-item class="v-nav" href="/absences">Absences</b-nav-item>
     </nav>
   </div>
 </template>
@@ -21,15 +21,20 @@ nav {
   float: left;
   margin-left: 1.5em;
 }
+a {
+  color: black;
+}
 .v-nav {
   color: black;
   border-bottom: 1px solid rgb(184, 181, 181);
   margin-left: 0.5em;
   font-size: 20px;
 }
+
 .v-nav:last-child {
   border-bottom: none;
 }
+
 .v-nav:hover {
   background-color: rgba(226, 27, 40, 0.65);
 }
@@ -39,11 +44,13 @@ nav {
     float: none;
     /* border: 1px solid black; */
   }
+
   .v-nav {
     border-bottom: none;
     font-size: 20px;
     margin: 0;
   }
+
   .v-nav:hover {
     background-color: inherit;
   }
