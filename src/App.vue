@@ -6,37 +6,23 @@
   </div>
 </template>
 <script>
-  // @ is an alias to /src
-  import Navbar from "@/components/Navigation/Navbar.vue";
-  import VerticalNav from "./components/Navigation/VerticalNav.vue";
+// @ is an alias to /src
+import Navbar from "@/components/Navigation/Navbar.vue";
+import VerticalNav from "./components/Navigation/VerticalNav.vue";
 
-  export default {
-    name: "Home",
-    components: {
-      Navbar,
-      VerticalNav,
-    },
-  };
+export default {
+  name: "Home",
+  components: {
+    Navbar,
+    VerticalNav,
+  },
+};
 </script>
 <style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-  }
-
-  #nav {
-    padding: 30px;
-  }
-
-  #nav a {
-    font-weight: bold;
-    color: #2c3e50;
-  }
-
-  #nav a.router-link-exact-active {
-    color: #42b983;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;500;700&display=swap');
+#app {
+  font-family: 'Noto sans HK';
+  text-align: center;
+  color: #2c3e50;
+}
 </style>
