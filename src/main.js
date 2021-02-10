@@ -2,7 +2,6 @@ import Vue from "vue";
 import "./plugins/bootstrap-vue";
 import "./plugins/fontawesome-vue"
 import "./plugins/moment-vue";
-import "./plugins/vue-dataTable";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
