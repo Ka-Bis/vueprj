@@ -1,9 +1,9 @@
 <template>
   <div>
     <nav class="nav">
-      <b-nav-item class="v-nav" href="/formateur/cours">Cours</b-nav-item>
-      <b-nav-item class="v-nav" href="/devoirs">Devoirs</b-nav-item>
-      <b-nav-item class="v-nav" href="/examens">Examens</b-nav-item>
+      <b-nav-item class="v-nav" href="/cours">Cours</b-nav-item>
+      <b-nav-item class="v-nav" href="/cours/devoirs">Devoirs</b-nav-item>
+      <b-nav-item class="v-nav" href="/cours/examens">Examens</b-nav-item>
       <b-nav-item class="v-nav" href="/absences">Absences</b-nav-item>
     </nav>
   </div>
