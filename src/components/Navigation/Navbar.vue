@@ -1,68 +1,21 @@
 <template>
   <header>
-    <!-- V1 BOOTSTRAP -->
-    <!-- <nav class="navbar navbar-expand-lg bg-dark ml-auto">
-      <div class="container-fluid">
-        <button class="navbar-toggler border-0 btn-toggle" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-justify"
-            viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-              d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
-          </svg>
-        </button>
-        <router-link class="navbar-brand" to="/">
-          <img src="@/assets/institutionnel-logo.png" alt="" id="dawan_logo" />
-        </router-link>
-        <div class="collapse navbar-collapse" id="navbarToggler">
-          <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item">
-              <router-link class="nav-link a-link" to="/">Accueil</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link a-link" to="/espace-pedagogique">
-                Espace pedagogique
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link a-link" to="/espace-administrative">
-                Espace administrative
-              </router-link>
-            </li>
-          </ul>
-          <form class="ml-auto">
-            <div class="row">
-              <div class="input-group my-3">
-                <input type="text" class="form-control" placeholder="Search" />
-                <button class="btn btn-outline-danger" type="button">
-                  Search
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </nav> -->
-    <!-- V2 BOOTSTRAP-VUE -->
-    <b-navbar toggleable="lg" type="dark" variant="dark" class="navbar">
+    <b-navbar toggleable="lg" class="navbar">
       <b-navbar-brand href="#">
-        <router-link class="navbar-brand" to="/">
+        <b-link class="navbar-brand" href="/">
           <img src="@/assets/institutionnel-logo.png" alt="" id="dawan_logo" />
-        </router-link>
+        </b-link>
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse" class="border-0"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <!-- <router-link class="nav-link a-link" to="/">
-            Accueil
-          </router-link> -->
-          <b-nav-item href='/' class="nav-link a-link">Home</b-nav-item>
-          <b-nav-item class="nav-link a-link" to="/espace-pedagogique">
+          <b-nav-item href="/" class=" a-link">Home</b-nav-item>
+          <b-nav-item class=" a-link" to="/espace-pedagogique">
             Espace pedagogique
           </b-nav-item>
-          <b-nav-item class="nav-link a-link" to="/espace-administrative">
+          <b-nav-item class=" a-link" to="/espace-administrative">
             Espace administrative
           </b-nav-item>
         </b-navbar-nav>
@@ -71,15 +24,15 @@
           <b-nav-form class="nav-form">
             <b-form-input
               size="sm"
-              class="mr-sm-2"
+              class="mr-sm-2 input-search"
               placeholder="Search"
               style="width:200px;"
             />
             <b-button
               size="sm"
-              class="my-2 my-sm-0"
+              class="my-2 my-sm-0 px-4 btn-search"
               type="submit"
-              variant="outline-danger"
+              variant="danger"
             >
               Search
             </b-button>
@@ -88,13 +41,11 @@
       </b-collapse>
     </b-navbar>
     <Breadcrumb />
-    <!-- <Breadcrumb /> -->
   </header>
 </template>
 
 <script>
 import Breadcrumb from "@/components/Navigation/Breadcrumb.vue";
-// import Breadcrumb2 from "@/components/Navigation/Breadcrumb2.vue";
 export default {
   name: "Navbar",
   components: {
@@ -107,22 +58,46 @@ export default {
 .navbar {
   margin-top: 3em;
   height: 4em;
-  /* background-color: #212529; */
+  background-color: #212529;
   /* width: 70%; */
 }
 
 .a-link,
 .nav-form {
-  background-color: rgb(52, 58, 64);
+  background-color: #212529;
+
+  /* background-color: rgb(52, 58, 64); */
 }
 
-ul {
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
   font-size: 20px;
 }
 
-.a-link,
-.btn-toggle {
-  color: #fff;
+.input-search {
+  background-color: #212529;
+  border: none;
+  border-bottom: 1px solid #fff;
+  border-radius: 0;
+  outline: none;
+  color: rgba(255, 255, 255, 0.877);
+}
+
+.input-search:focus {
+  outline: solid #212529
+  /* border-color: red; */
+}
+
+.input-search::placeholder {
+  color: rgb(168, 168, 168);
+  font-size: 15px;
+}
+
+.btn-search {
+  background-color: rgba(226, 27, 40, 0.65);
+  border: none;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
 }
 
 /* .input {
