@@ -4,8 +4,7 @@ import Home from "../views/Home.vue";
 import Compteur from "@/components/Compteur.vue";
 import FormateurDshbrd from "@/components/Formateur/FormateurDashboard.vue";
 import Course from "@/components/Formateur/CourseDashboard.vue";
-// import CourseDetail from "@/components/Formateur/CourseDetail.vue";
-import AddCourse from "@/components/Formateur/Add-Course.vue";
+import CourseDetail from "@/components/Formateur/CourseDetail.vue";
 import NotFound from "@/components/NotFound.vue";
 Vue.use(VueRouter);
 
@@ -32,13 +31,7 @@ const routes = [
     name: "course",
     component: Course,
   },
-  // { path: "/cours/:id", name: "c", component: CourseDetail },
-  {
-    path: "/cours/ajouter-un-cours",
-    name: "add-course",
-    component: AddCourse,
-    // component: ()=> import('@/components/Formateur/Add-Course.vue'),
-  },
+  { path: "/cours/detail", name: "c", component: CourseDetail },
   {
     path: "*",
     name: "notfound",

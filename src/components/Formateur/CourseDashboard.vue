@@ -1,86 +1,68 @@
 <template>
   <div>
-    <h1>Liste des cours</h1>
+    <h1>Affichage des cours</h1>
     <section>
       <div class="container">
         <div class="row">
-          <div class="mb-3 ml-auto">
-            <b-dropdown
-              text="Trier par date"
-              size="sm"
-              variant="none"
-              class="drpdwn"
-            >
-              <b-dropdown-item href="#">Croissant</b-dropdown-item>
-              <b-dropdown-item href="#">Decroissant</b-dropdown-item>
-            </b-dropdown>
-
-            <b-dropdown
-              text="Trier par Intitulé"
-              size="sm"
-              variant="none"
-              class="drpdwn"
-            >
-              <b-dropdown-item href="#">Croissant</b-dropdown-item>
-              <b-dropdown-item href="#">Decroissant</b-dropdown-item>
-            </b-dropdown>
+          <div class="my-3 ml-auto">
+            <b-form inline>
+              <label for="pageSelect" class="mr-sm-2">Affichage :</label>
+              <b-form-select
+                id="pageSelect"
+                v-model="per_page"
+                :options="itemLength"
+                class="border-0 opts"
+                size="sm"
+              >
+              </b-form-select>
+            </b-form>
           </div>
-          <div class="offset-md-1 col-10 offset-md-1">
+          <div class="col-md-12">
             <b-table
               id="my-table"
-              responsive
               striped
               fixed
               small
-              :items="courses"
+              :items="items"
               :fields="fields"
-              :per-page="perPage"
+              :per-page="per_page"
               :current-page="currentPage"
             >
-              <template #cell(index)="data">
-                {{ data.index + 1 }}
-              </template>
               <template #cell(title)="data">
                 <b-link href="#" style="color:black;">
                   {{ data.value }}
                 </b-link>
               </template>
-              <template #cell(edit)>
+
+              <template #cell(dateBegin)="data">
+                {{ data.value | formatDate }}
+              </template>
+
+              <template #cell(dateEnd)="data">
+                {{ data.value | formatDate }}
+              </template>
+
+              <template #cell(modifier)>
                 <font-awesome-icon
                   :icon="['fas', 'pen']"
                   class="icon text-secondary"
                 />
               </template>
-              <template #cell(remove)>
+
+              <template #cell(supprimer)>
                 <font-awesome-icon
                   :icon="['fas', 'times']"
                   class="icon text-danger"
-                  @click="deleteItem(index)"
                 />
-              </template>
-              <template #cell(dateBegin)="data">
-                {{
-                  data.value | moment("timezone", "Europe/Paris", "DD/MM/YYYY")
-                }}
-              </template>
-              <template #cell(dateEnd)="data">
-                {{
-                  data.value | moment("timezone", "Europe/Paris", "DD/MM/YYYY")
-                }}
               </template>
             </b-table>
           </div>
-          <div class="ml-auto">
-            <a class="btn rounded-0 btn-sm ml-auto mb-2" :href="add_course">
-              Ajouter un cours
-            </a>
-          </div>
         </div>
         <b-pagination
-          class="pages text-dark"
+          class="pages ml-auto border-0"
           v-model="currentPage"
           :total-rows="rows"
-          :per-page="perPage"
+          :per-page="per_page"
           aria-controls="my-table"
           size="sm"
         >
@@ -91,91 +73,58 @@
 </template>
 
 <script>
-// import { CourseModel } from "@/utils/Course.js";
-import CourseModel from "@/mock/course.json";
+// import courseModel from "@/mock/course.json";
+// import { courseFields } from "@/mock/fields.js";
+// import { courseItemLength } from "@/mock/itemLength.js";
 export default {
   name: "Course",
+  props: {
+    // items,fields,itemLength,perPage
+    items: {
+      type: Array,
+      required: true,
+    },
+    itemLength: {
+      type: Array,
+      required: true,
+    },
+    perPage: {
+      type: Number,
+      required: true,
+    },
+    fields: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
-      courses: CourseModel,
-      fields: [
-        "index",
-        // {
-        //   key: "id",
-        //   label: "#",
-        // },
-        {
-          key: "title",
-          label: "Intitulé",
-          sortable: true,
-        },
-        {
-          key: "dateBegin",
-          label: "Date de debut",
-          sortable: true,
-        },
-        {
-          key: "dateEnd",
-          label: "Date de fin",
-          sortable: true,
-        },
-        "edit",
-        "remove",
-      ],
-      perPage: 10,
+      // items: courseModel,
+      // fields: courseFields,
+      // itemLength: courseItemLength,
+      per_page: this.perPage,
       currentPage: 1,
-      add_course: "/cours/ajouter-un-cours",
     };
   },
   methods: {
     deleteItem(index) {
-      this.courses.splice(index, 1);
+      this.items.splice(index, 1);
     },
   },
   computed: {
     rows() {
-      return this.courses.length;
+      return this.items.length;
     },
   },
 };
 </script>
 <style scoped>
-.drpdwn {
-  outline: green;
-}
-
-.drpdwn:focus {
-  outline: red;
-}
-
-.icon {
-  /* width: 30px; */
-  margin: 0 0.5em;
+.opts,
+label {
+  color: black;
 }
 
 .icon:hover {
   cursor: pointer;
-}
-
-.btn {
-  border: 1px solid black;
-  outline: none;
-}
-
-.btn:focus {
-  outline: 0;
-}
-
-.btn:hover {
-  background-color: inherit;
-  color: inherit;
-}
-
-.pages:focus {
-  outline: red;
-}
-
-.page-item > button {
-  background-color: red;
 }
 </style>

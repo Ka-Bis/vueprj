@@ -10,6 +10,7 @@ import vuejquery from 'vue-jquery';
 Vue.use(vuejquery)
 Vue.config.productionTip = false;
 
+
 new Vue({
   router,
   store,

@@ -4,6 +4,7 @@
       <b-navbar-brand href="#">
         <b-link class="navbar-brand" href="/">
           <img src="@/assets/institutionnel-logo.png" alt="" id="dawan_logo" />
+          <!-- <h2 class="text-light">CFA DAWAN</h2> -->
         </b-link>
       </b-navbar-brand>
 
